@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre></pre>
+    
+    <script>
+
+        const xhr = new XMLHttpRequest();//XMLHttpRequest 객채를 생성
+
+        xhr.open('GET', '/todos/1');//todos 리소스에서 id 를 사용해 특정 todo를 취득한다
+
+        //HTTP요청 전송
+        xhr.send();
+
+        xhr.onload = () => { //load 이벤트는 요청이 성공적으로 완료되면 발생한다
+
+            if(xhr.status === 200){ //status 프로퍼티가 200이면 정상적으로 응답된 상태
+                document.querySelector('pre').textContent = xhr.response;
+            }
+            else {
+                console.error('Error', xhr.status, xhr.statusText);
+            }
+
+        };
+
+    </script>
+</body>
+</html>
