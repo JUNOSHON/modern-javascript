@@ -1,6 +1,10 @@
-const person = {
-  "last-name": "shon",
-  1: 10,
+const obj = {
+  x: 1,
+  y: 2,
+  
 };
+const obj2 = {...obj};
 
-console.log(person.last - name);
+
+obj2.x = 2;
+console.log(obj);
